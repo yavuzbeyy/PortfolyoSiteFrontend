@@ -1,1 +1,31 @@
-<p>contact works!</p>
+<div class="contact-container">
+    <div class="contact-header">
+      <h2>İletişim</h2>
+      <p>Bizimle iletişime geçmek için aşağıdaki formu doldurun.</p>
+    </div>
+    <div class="contact-form">
+      <form action="send message" method="post" class="send message">
+        <div class="form-group">
+          <input type="text" name="name" class="form-control" placeholder="Adınız" required>
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" name="email" placeholder="Email Adresiniz" required>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="subject" placeholder="Konu" required>
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" name="message" rows="6" placeholder="Mesajınız" required></textarea>
+        </div>
+        <div class="form-actions text-center">
+          <button type="submit" class="btn btn-primary">Mesaj Gönder</button>
+        </div>
+        <div class="status-messages">
+          <div class="loading">Yükleniyor...</div>
+          <div class="error-message">Mesaj gönderilemedi. Lütfen tekrar deneyin.</div>
+          <div class="sent-message">Mesajınız gönderildi. Teşekkür ederiz!</div>
+        </div>
+      </form>
+    </div>
+  </div>
+  

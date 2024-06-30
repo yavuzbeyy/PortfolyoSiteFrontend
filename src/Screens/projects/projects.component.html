@@ -1,20 +1,15 @@
 <h2>Projeler</h2>
 
-<div class="container mt-5"> 
+<div class="container mt-5">
+  <div class="row">
+    <div *ngFor="let project of projects" class="col-md-4 mb-3 d-flex align-items-stretch">
+      <div class="card">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/019/900/152/small_2x/old-book-watercolor-illustration-png.png" class="card-img-top img-fluid rounded-start" alt="Project Image">
+        <div class="card-body">
+          <h5 class="card-title">{{ project.projectName }}</h5>
+          <p class="card-text">{{ project.description }}</p>
+        </div>
+      </div>
+    </div>
   </div>
-  
-            <!-- Card with an image on left -->
-            <div class="card mb-3">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="https://static.vecteezy.com/system/resources/thumbnails/019/900/152/small_2x/old-book-watercolor-illustration-png.png" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card with an image on left</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  </div>
-                </div>
-              </div>
 </div>
-       

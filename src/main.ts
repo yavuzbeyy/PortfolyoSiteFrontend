@@ -7,6 +7,8 @@ import { ArticlesComponent } from './Screens/articles/articles.component';
 import { AboutUsComponent } from './Screens/about-us/about-us.component';
 import { ProjectsComponent } from './Screens/projects/projects.component';
 import { ContactComponent } from './Screens/contact/contact.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 
 
 const routes: Routes = [
@@ -19,7 +21,9 @@ const routes: Routes = [
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter(routes),
-    importProvidersFrom(BrowserModule)
+    importProvidersFrom(HttpClientModule),
+    importProvidersFrom(BrowserModule),
+    importProvidersFrom(ToastrModule.forRoot())
   ]
 })
 .catch(err => console.error(err));

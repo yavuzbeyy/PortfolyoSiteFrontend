@@ -1,0 +1,113 @@
+// Genel ayarlar
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  // Card ayarları
+  .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    background-color: #ffffff;
+  }
+  
+  .card-body {
+    padding: 2rem;
+  }
+  
+  // Accordion ayarları
+  .accordion-button {
+    background-color: #c1d2e4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    padding: 1rem 1.5rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .accordion-button:not(.collapsed) {
+    background-color: #eca35e;
+  }
+  
+  .accordion-button:hover {
+    background-color: #eca35e;
+  }
+  
+  .accordion-flush .accordion-collapse {
+    border-top: 1px solid #e9ecef;
+  }
+  
+  .accordion-item {
+    border: none;
+    margin-bottom: 1rem;
+  }
+  
+  .accordion-body {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-top: none;
+    padding: 1.5rem;
+    border-radius: 0 0 5px 5px;
+  }
+  
+  // Additional styles for the hero section
+  .hero {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f4f4f9;
+  }
+  
+  .hero h1 {
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    margin-bottom: 2rem;
+  }
+  
+  .hero button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .hero button:hover {
+    background-color: #0056b3;
+  }
+
+  .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    background-color: #ffffff;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+  
+  .row {
+    margin-top: 2rem;
+  }
+  
+  .col-lg-6 {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .img-fluid {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }

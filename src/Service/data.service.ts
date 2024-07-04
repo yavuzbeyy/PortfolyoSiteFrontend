@@ -32,6 +32,11 @@ export class DataService {
     return this.http.get<any[]>(apiUrl);
   }
 
+  fetchAllArticles(): Observable<any[]> {
+    const apiUrl = this.baseApi + 'api/Article/ListAll';
+    return this.http.get<any[]>(apiUrl);
+  }
+
   // Get project by ID
   getProjectById(id: number): Observable<any> {
     const apiUrl = `${this.baseApi}api/Project/GetById/${id}`;

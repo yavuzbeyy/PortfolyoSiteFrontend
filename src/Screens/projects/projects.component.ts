@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../Service/data.service';  // DataService'in doğru yolunu kullanın
+import { DataService } from '../../Service/data.service';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
   standalone: true,
-  imports: [CommonModule,HttpClientModule]
+  imports: [CommonModule, HttpClientModule]
 })
 export class ProjectsComponent implements OnInit {
   projects: any[] = [];
@@ -16,13 +16,38 @@ export class ProjectsComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.loadProjects();
+  }
+
+  loadProjects(): void {
     this.dataService.fetchProjects().subscribe(
       (response: any[]) => {
         this.projects = response;
-        console.log(this.projects)
+        this.projects.forEach(project => {
+          this.loadProjectImage(project);
+        });
       },
       (error) => {
         console.error('Error fetching projects', error);
+      }
+    );
+  }
+
+  loadProjectImage(project: any): void {
+    this.dataService.getImageByFilekey(project.fileKey).subscribe(
+      (imageBlob: Blob) => {
+        let reader = new FileReader();
+        reader.addEventListener("load", () => {
+          project.imageUrl = reader.result as string;
+        }, false);
+
+        if (imageBlob) {
+          reader.readAsDataURL(imageBlob);
+        }
+      },
+      (error) => {
+        console.error('Error fetching project image', error);
+        project.imageUrl = 'default-image-url'; // Hata durumunda varsayılan bir resim URL'i kullanın
       }
     );
   }

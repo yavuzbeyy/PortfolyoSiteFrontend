@@ -4,7 +4,7 @@
   <div class="row">
     <div *ngFor="let project of projects" class="col-md-4 mb-3 d-flex align-items-stretch">
       <div class="card">
-        <img src="https://static.vecteezy.com/system/resources/thumbnails/019/900/152/small_2x/old-book-watercolor-illustration-png.png" class="card-img-top img-fluid rounded-start" alt="Project Image">
+        <img [src]="project.imageUrl || 'https://static.thenounproject.com/png/4595376-200.png'" class="card-img-top img-fluid rounded-start" alt="Project Image">
         <div class="card-body">
           <h5 class="card-title">{{ project.projectName }}</h5>
           <p class="card-text">{{ project.description }}</p>

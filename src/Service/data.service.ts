@@ -43,6 +43,12 @@ export class DataService {
     return this.http.get<any>(apiUrl);
   }
 
+    // Get project by ID
+    getImageByFilekey(filekey: string): Observable<any> {
+      const apiUrl = `${this.baseApi}api/Upload/GetImageByFotokey?filekey=${filekey}`;
+      return this.http.get(apiUrl, { responseType: 'blob' });
+    }
+
   /*
   // Create a new project
   createProject(project: ProjectCreateModel): Observable<any> {

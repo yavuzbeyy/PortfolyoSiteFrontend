@@ -8,11 +8,12 @@ body {
   
   // Card ayarları
   .card {
-    border: none;
+    border: black;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 1.5rem;
-    background-color: #ffffff;
+    background-color: #a38484;
+    width: 70%;
   }
   
   .card-body {
@@ -154,4 +155,20 @@ button.detail-button {
 
 button.detail-button:hover {
   background-color: #218838; /* Koyu yeşil renk hover efekti */
+}
+
+button {
+  padding: 5px 10px; /* Buton boyutlarını küçültme */
+  font-size: 12px; /* Font boyutunu küçültme */
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  color: white;
+}
+
+button.create-button{
+  background-color: #005fee;
 }

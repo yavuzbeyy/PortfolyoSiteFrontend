@@ -1,17 +1,17 @@
 <div class="row">
-  <div *ngFor="let article of articles" class="col-lg-6 mb-4">
+  <div *ngFor="let article of articles" class="col-lg-4 mb-4">
     <div class="card">
       <div class="row g-0">
         <div class="col-md-4">
           <img [src]="article.imageUrl || 'https://static.thenounproject.com/png/4595376-200.png'" class="img-fluid rounded-start" alt="Article Image">
         </div>
-        <div class="col-md-8">
+        <div class="col-sm-8">
           <div class="card-body">
             <h5 class="card-title">{{ article.title }}</h5>
             <p class="card-text">{{ article.content }}</p>
             <p class="card-text">{{ article.createdDate }}</p>
             <button class="detail-button">Detay</button>
-            <button (click)="deleteArticleById(article.id)" class="delete-button">Sil</button>
+            <button class="delete-button">Sil</button>
             <button class="update-button">Güncelle</button>
           </div>
         </div>

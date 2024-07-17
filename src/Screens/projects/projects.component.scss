@@ -25,6 +25,7 @@ h4,
 h5,
 h6 {
   font-family: "Nunito", sans-serif;
+  
 }
 
 /* Card */
@@ -105,6 +106,10 @@ button {
   margin: 4px 2px;
   cursor: pointer;
   color: white;
+}
+
+button.create-button{
+  background-color: #005fee;
 }
 
 /* Sil butonu */

@@ -47,8 +47,22 @@ export class ProjectsComponent implements OnInit {
       },
       (error) => {
         console.error('Error fetching project image', error);
-        project.imageUrl = 'default-image-url'; // Hata durumunda varsayılan bir resim URL'i kullanın
+        project.imageUrl = 'https://static.thenounproject.com/png/4595376-200.png'; // Hata durumunda varsayılan bir resim URL'i
       }
     );
   }
+
+  deleteProjectById(projectId: number): void {
+    if (confirm("Bu projeyi silmek istediğinizden emin misiniz?")) {
+      this.dataService.deleteProject(projectId).subscribe(
+        (response) => {
+          this.dataService.showSuccessMessage({ message: response });
+          window.location.reload(); // Sayfayı yeniden yükle
+        },
+        (error) => {
+          console.error('Error deleting project', error);
+          this.dataService.showFailMessage(error.error); // Hata mesajını göster
+        }
+      );
+    }}
 }

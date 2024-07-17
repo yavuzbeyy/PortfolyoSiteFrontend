@@ -66,6 +66,12 @@ export class DataService {
   // Delete a project by ID
   deleteProject(id: number): Observable<any> {
     const apiUrl = `${this.baseApi}api/Project/Delete/${id}`;
-    return this.http.delete(apiUrl);
+    return this.http.delete(apiUrl,{ responseType: 'text' });
+  }
+
+   // Delete a project by ID
+   deleteArticle(id: number): Observable<any> {
+    const apiUrl = `${this.baseApi}api/Article/Delete/${id}`;
+    return this.http.delete(apiUrl,{ responseType: 'text' });
   }
 }

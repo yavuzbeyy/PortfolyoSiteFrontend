@@ -15,7 +15,8 @@ const routes: Routes = [
   { path: 'articles', component: ArticlesComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'projects', component: ProjectsComponent },
-  { path: 'contact', component: ContactComponent }
+  { path: 'contact', component: ContactComponent },
+  { path: '', redirectTo: 'about-us', pathMatch: 'full' }
 ];
 
 bootstrapApplication(AppComponent, {

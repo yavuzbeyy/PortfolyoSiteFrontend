@@ -2,19 +2,21 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../Service/data.service';
 import { HttpClientModule } from '@angular/common/http';
+import { routes } from '../../app/app.routes';
+import { Router, RouterModule, Routes } from '@angular/router';
 
 @Component({
   selector: 'app-articles',
   templateUrl: './articles.component.html',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule,RouterModule],
   styleUrls: ['./articles.component.scss']
 })
 export class ArticlesComponent implements OnInit {
 
   articles: any[] = [];
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService,private router: Router) { }
 
   ngOnInit() {
     this.fetchArticles();
@@ -51,5 +53,23 @@ export class ArticlesComponent implements OnInit {
         article.imageUrl = 'default-image-url'; // Hata durumunda varsayılan bir resim URL'i kullanın
       }
     );
+  }
+
+  deleteArticleById(articleId: number) {
+    if(confirm("Bu makaleyi silmek istediğinizden emin misiniz?")) {
+      this.dataService.deleteArticle(articleId).subscribe(
+        (response) => {
+          this.articles = this.articles.filter(article => article.id !== articleId);
+          this.dataService.showSuccessMessage(response);
+
+          window.location.reload();
+
+        },
+        (error) => {
+          console.error('Error deleting article', error);
+          this.dataService.showFailMessage(error.error); // Hata mesajını göster
+        }
+      );
+    }
   }
 }

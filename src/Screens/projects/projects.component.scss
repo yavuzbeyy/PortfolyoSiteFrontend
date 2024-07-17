@@ -94,20 +94,47 @@ h6 {
   padding: 15px;
 }
 
+/* Genel buton stili */
 button {
-  background-color: #28a745; /* Success button color */
-  border: none;
-  color: white;
-  padding: 10px 20px;
+  padding: 5px 10px; /* Buton boyutlarını küçültme */
+  font-size: 12px; /* Font boyutunu küçültme */
+  border-radius: 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  border-radius: 5px;
+  color: white;
 }
 
-button:hover {
-  background-color: #218838; /* Darker success button color on hover */
+/* Sil butonu */
+button.delete-button {
+  background-color: #dc3545; /* Kırmızı renk */
+  border: none;
+  color: white;
 }
+
+button.delete-button:hover {
+  background-color: #c82333; /* Koyu kırmızı renk hover efekti */
+}
+
+/* Güncelle butonu */
+button.update-button {
+  background-color: #fd7e14; /* Turuncu renk */
+  border: none;
+  color: white;
+}
+
+button.update-button:hover {
+  background-color: #e65100; /* Koyu turuncu renk hover efekti */
+}
+
+/* Detay butonu */
+button.detail-button {
+  background-color: #28a745; /* Yeşil renk */
+}
+
+button.detail-button:hover {
+  background-color: #218838; /* Koyu yeşil renk hover efekti */
+}
+

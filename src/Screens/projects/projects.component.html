@@ -8,7 +8,9 @@
         <div class="card-body">
           <h5 class="card-title">{{ project.projectName }}</h5>
           <p class="card-text">{{ project.description }}</p>
-          <button>Detay</button>
+          <button class="detail-button">Detay</button>
+          <button class="delete-button" (click)="deleteProjectById(project.id)">Sil</button>
+          <button class="update-button">Güncelle</button>
         </div>
       </div>
     </div>

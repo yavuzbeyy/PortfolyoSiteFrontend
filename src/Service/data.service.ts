@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 //import { ProjectUpdateModel } from '../Models/ProjectUpdateModel';
 import { ToastrService } from 'ngx-toastr';
 import { ProjectModel } from '../Models/ProjectModel';
+import { ArticleModel } from '../Models/ArticleModel';
 
 @Injectable({
   providedIn: 'root'
@@ -56,6 +57,12 @@ export class DataService {
     const apiUrl = this.baseApi + 'api/Project/Create';
     return this.http.post(apiUrl, project);
   }
+
+    // Create a new article
+    createArticle(article: ArticleModel): Observable<any> {
+      const apiUrl = this.baseApi + 'api/Article/Create';
+      return this.http.post(apiUrl, article);
+    }
 
   // Update an existing project
   /*

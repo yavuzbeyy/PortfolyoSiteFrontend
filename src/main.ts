@@ -12,6 +12,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AddArticleComponent } from './admin/add-article/add-article.component';
 import { AddProjectComponent } from './admin/add-project/add-project.component';
 import { MessagesComponent } from './admin/messages/messages.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ bootstrapApplication(AppComponent, {
     provideRouter(routes),
     importProvidersFrom(HttpClientModule),
     importProvidersFrom(BrowserModule),
+    importProvidersFrom(BrowserAnimationsModule),
     importProvidersFrom(ToastrModule.forRoot())
   ]
 })

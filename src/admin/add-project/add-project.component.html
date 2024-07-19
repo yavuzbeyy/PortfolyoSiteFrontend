@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Proje Oluştur</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="projectName">Proje Adı:</label>
+        <input type="text" id="projectName" [(ngModel)]="project.projectName" name="projectName" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Açıklama:</label>
+        <textarea id="description" [(ngModel)]="project.description" name="description" class="form-control" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="fotoKey">Resim Yükle:</label>
+        <input type="file" id="fotoKey" (change)="onFileSelected($event)" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Proje Oluştur</button>
+    </form>
+  </div>
+  

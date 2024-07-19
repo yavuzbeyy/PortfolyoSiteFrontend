@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 //import { ProjectCreateModel } from '../Models/ProjectCreateModel';
 //import { ProjectUpdateModel } from '../Models/ProjectUpdateModel';
 import { ToastrService } from 'ngx-toastr';
+import { ProjectModel } from '../Models/ProjectModel';
 
 @Injectable({
   providedIn: 'root'
@@ -49,19 +50,20 @@ export class DataService {
       return this.http.get(apiUrl, { responseType: 'blob' });
     }
 
-  /*
+  
   // Create a new project
-  createProject(project: ProjectCreateModel): Observable<any> {
+  createProject(project: ProjectModel): Observable<any> {
     const apiUrl = this.baseApi + 'api/Project/Create';
     return this.http.post(apiUrl, project);
   }
 
   // Update an existing project
+  /*
   updateProject(project: ProjectUpdateModel): Observable<any> {
     const apiUrl = this.baseApi + 'api/Project/Update';
     return this.http.put(apiUrl, project);
   }
-*/
+  */
 
   // Delete a project by ID
   deleteProject(id: number): Observable<any> {
@@ -73,5 +75,19 @@ export class DataService {
    deleteArticle(id: number): Observable<any> {
     const apiUrl = `${this.baseApi}api/Article/Delete/${id}`;
     return this.http.delete(apiUrl,{ responseType: 'text' });
+  }
+
+  uploadImage(file: File): Observable<any> {
+    const url = `${this.baseApi}api/Upload/Upload`;
+    const formData = new FormData();
+    formData.append('imageFile', file);
+
+    const options = {
+      headers: new HttpHeaders({
+        'Accept': 'application/json'
+      })
+    };
+
+    return this.http.post(url, formData, options);
   }
 }
